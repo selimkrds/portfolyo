@@ -341,45 +341,60 @@
                 <!-- Sağ Kolon - İletişim Formu -->
                 <div class="flex-1 bg-dark/50 backdrop-blur-sm px-4 md:px-5 pt-4 pb-3 rounded-xl border border-secondary/20 shadow-xl h-auto md:h-[440px]">
                     <h3 class="text-lg md:text-xl font-semibold text-secondary mb-3">Bana Ulaş</h3>
-                    <form name="contact" method="POST" data-netlify="true" id="contactForm" class="space-y-2">
-                        <input type="hidden" name="form-name" value="contact">
-                      
+                    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-2">
+                        <input type="hidden" name="form-name" value="contact" />
+                        <p class="hidden">
+                            <label>
+                                Bot alanını doldurmayın: <input name="bot-field" />
+                            </label>
+                        </p>
                         <div>
-                          <label class="block text-gray-300 text-xs md:text-sm font-medium mb-1">İsim Soyisim</label>
-                          <input type="text" name="fullName" required
-                            class="w-full px-3 py-1.5 bg-dark/50 border border-secondary/20 rounded-lg focus:ring-2 focus:ring-secondary/50 focus:border-secondary text-gray-300 placeholder-gray-500 text-sm"
-                            placeholder="Adınız ve Soyadınız">
+                            <label class="block text-gray-300 text-xs md:text-sm font-medium mb-1">İsim Soyisim</label>
+                            <input type="text" 
+                                   name="fullName"
+                                   required
+                                   class="w-full px-3 py-1.5 bg-dark/50 border border-secondary/20 rounded-lg focus:ring-2 focus:ring-secondary/50 focus:border-secondary text-gray-300 placeholder-gray-500 text-sm"
+                                   placeholder="Adınız ve Soyadınız">
                         </div>
-                      
+                        
                         <div>
-                          <label class="block text-gray-300 text-xs md:text-sm font-medium mb-1">E-posta</label>
-                          <input type="email" name="email" required
-                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-                            class="w-full px-3 py-1.5 bg-dark/50 border border-secondary/20 rounded-lg focus:ring-2 focus:ring-secondary/50 focus:border-secondary text-gray-300 placeholder-gray-500 text-sm"
-                            placeholder="ornek@email.com">
+                            <label class="block text-gray-300 text-xs md:text-sm font-medium mb-1">E-posta</label>
+                            <input type="email" 
+                                   name="email"
+                                   required
+                                   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                   class="w-full px-3 py-1.5 bg-dark/50 border border-secondary/20 rounded-lg focus:ring-2 focus:ring-secondary/50 focus:border-secondary text-gray-300 placeholder-gray-500 text-sm"
+                                   placeholder="ornek@email.com">
                         </div>
-                      
+                        
                         <div>
-                          <label class="block text-gray-300 text-xs md:text-sm font-medium mb-1">Telefon</label>
-                          <input type="tel" name="phone" required
-                            class="w-full px-3 py-1.5 bg-dark/50 border border-secondary/20 rounded-lg focus:ring-2 focus:ring-secondary/50 focus:border-secondary text-gray-300 placeholder-gray-500 text-sm"
-                            placeholder="+90 (___) ___ __ __">
+                            <label class="block text-gray-300 text-xs md:text-sm font-medium mb-1">Telefon</label>
+                            <input type="tel" 
+                                   name="phone"
+                                   required
+                                   class="w-full px-3 py-1.5 bg-dark/50 border border-secondary/20 rounded-lg focus:ring-2 focus:ring-secondary/50 focus:border-secondary text-gray-300 placeholder-gray-500 text-sm"
+                                   placeholder="+90 (___) ___ __ __">
                         </div>
-                      
+                        
                         <div>
-                          <label class="block text-gray-300 text-xs md:text-sm font-medium mb-1">Mesajınız</label>
-                          <textarea name="message" required
-                            class="w-full px-3 py-1.5 bg-dark/50 border border-secondary/20 rounded-lg focus:ring-2 focus:ring-secondary/50 focus:border-secondary text-gray-300 placeholder-gray-500 h-20 md:h-14 resize-none text-sm"
-                            placeholder="Mesajınızı buraya yazın..."></textarea>
+                            <label class="block text-gray-300 text-xs md:text-sm font-medium mb-1">Mesajınız</label>
+                            <textarea name="message"
+                                    required
+                                    class="w-full px-3 py-1.5 bg-dark/50 border border-secondary/20 rounded-lg focus:ring-2 focus:ring-secondary/50 focus:border-secondary text-gray-300 placeholder-gray-500 h-20 md:h-14 resize-none text-sm"
+                                    placeholder="Mesajınızı buraya yazın..."></textarea>
                         </div>
-                      
-                        <button type="submit"
-                          class="w-full bg-secondary hover:bg-secondary/80 text-dark font-medium py-1.5 px-4 rounded-lg transition duration-300 flex items-center justify-center space-x-2 mt-2 text-sm">
-                          <span>Gönder</span>
-                          <i class="fas fa-paper-plane"></i>
+
+                        <div class="success-message hidden text-xs md:text-sm text-green-500 bg-green-100/10 p-2 md:p-3 rounded-lg border border-green-500/20 mt-2">
+                            <i class="fas fa-check-circle mr-2"></i>
+                            Mesajınız başarıyla gönderildi, en kısa zamanda sizlere dönüş yapacağız!
+                        </div>
+
+                        <button type="submit" 
+                                class="w-full bg-secondary hover:bg-secondary/80 text-dark font-medium py-1.5 px-4 rounded-lg transition duration-300 flex items-center justify-center space-x-2 mt-2 text-sm">
+                            <span>Gönder</span>
+                            <i class="fas fa-paper-plane ml-2"></i>
                         </button>
-                      </form>
-                      
+                    </form>
                 </div>
             </div>
         </div>
@@ -401,112 +416,26 @@
 
     <script src="./src/js/main.js"></script>
     <script>
-        // Telefon numarası formatlaması
-        document.querySelector('input[type="tel"]').addEventListener('input', function(e) {
-            let value = e.target.value.replace(/\D/g, '');
+        document.addEventListener('DOMContentLoaded', function() {
+            // Form başarı mesajı kontrolü
+            const form = document.querySelector('form[name="contact"]');
+            const successMessage = document.querySelector('.success-message');
             
-            if (value.length > 0) {
-                // Eğer ilk rakamlar 90 değilse başına ekle
-                if (!value.startsWith('90')) {
-                    value = '90' + value;
-                }
-                
-                // Formatı uygula
-                let formattedValue = '';
-                if (value.length > 0) formattedValue = '+' + value.substring(0, 2);
-                if (value.length > 2) formattedValue += ' (' + value.substring(2, 5);
-                if (value.length > 5) formattedValue += ') ' + value.substring(5, 8);
-                if (value.length > 8) formattedValue += ' ' + value.substring(8, 10);
-                if (value.length > 10) formattedValue += ' ' + value.substring(10, 12);
-                
-                e.target.value = formattedValue;
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    // Form gönderildikten sonra başarı mesajını göster
+                    setTimeout(() => {
+                        successMessage.classList.remove('hidden');
+                        // 3 saniye sonra mesajı gizle
+                        setTimeout(() => {
+                            successMessage.classList.add('hidden');
+                            // Formu temizle
+                            form.reset();
+                        }, 3000);
+                    }, 1000);
+                });
             }
         });
-
-        function validateForm(event) {
-            event.preventDefault();
-            
-            const form = document.getElementById('contactForm');
-            const alert = document.getElementById('formAlert');
-            const successAlert = document.getElementById('successAlert');
-            
-            // Tüm required alanları kontrol et
-            const inputs = form.querySelectorAll('input[required], textarea[required]');
-            let isValid = true;
-            let errorMessage = '';
-
-            inputs.forEach(input => {
-                if (!input.value.trim()) {
-                    isValid = false;
-                    errorMessage = 'Lütfen tüm alanları doldurun.';
-                }
-            });
-
-            // E-posta formatı kontrolü
-            const email = form.querySelector('input[type="email"]');
-            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-            if (email.value && !emailPattern.test(email.value)) {
-                isValid = false;
-                errorMessage = 'Lütfen geçerli bir e-posta adresi girin.';
-            }
-
-            // Telefon formatı kontrolü
-            const phone = form.querySelector('input[type="tel"]');
-            const phoneValue = phone.value.replace(/\D/g, '');
-            if (phoneValue.length !== 12) {
-                isValid = false;
-                errorMessage = 'Lütfen geçerli bir telefon numarası girin.';
-            }
-
-            if (!isValid) {
-                alert.textContent = errorMessage;
-                alert.classList.remove('hidden');
-                successAlert.classList.add('hidden');
-                return false;
-            }
-
-            // Form verilerini topla
-            const formData = {
-                fullName: form.querySelector('input[name="fullName"]').value,
-                email: form.querySelector('input[name="email"]').value,
-                phone: form.querySelector('input[name="phone"]').value,
-                message: form.querySelector('textarea[name="message"]').value
-            };
-
-            // Backend'e gönder
-            fetch('http://localhost:3000/send-email', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData)
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    // Başarı mesajını göster
-                    alert.classList.add('hidden');
-                    successAlert.classList.remove('hidden');
-                    
-                    // 3 saniye sonra başarı mesajını gizle
-                    setTimeout(() => {
-                        successAlert.classList.add('hidden');
-                    }, 3000);
-                    
-                    // Form'u temizle
-                    form.reset();
-                } else {
-                    throw new Error(data.message);
-                }
-            })
-            .catch(error => {
-                alert.textContent = 'Mesaj gönderilirken bir hata oluştu. Lütfen daha sonra tekrar deneyin.';
-                alert.classList.remove('hidden');
-                successAlert.classList.add('hidden');
-            });
-
-            return false;
-        }
     </script>
 </body>
 </html> 
