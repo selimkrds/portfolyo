@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .section-padding {
+        @apply py-16 px-4 md:px-8 lg:px-16;
+    }
+}
+
+/* Navbar animations */
+#sideMenu {
+    transition: width 0.3s ease-in-out;
+}
+
+/* Main content adjustment */
+body > *:not(nav) {
+    margin-left: 48px; /* Ana menü butonu genişliği kadar margin */
+}
+
+/* Matrix animations */
+#matrixCanvas {
+    transition: width 0.3s ease-in-out;
+}
+
+/* Text shadow for better visibility */
+.text-shadow-lg {
+    text-shadow: 0 0 10px rgba(197, 165, 114, 0.3);
+}
+
+/* Main content adjustment */
+body {
+    background-color: #1a1a1a;
+}
+
+/* Reset ve temel stiller */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Skill kartları için özel stiller */
+.skill-card {
+    transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(197, 165, 114, 0.2);
+}
+
+.skill-card i {
+    transition: all 0.3s ease;
+}
+
+.skill-card:hover i {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+/* HTML5 kartı için özel stiller */
+.skill-card.html-card {
+    background-color: #2563eb !important; /* Mavi arka plan */
+}
+
+.skill-card.html-card:hover {
+    background-color: #1d4ed8 !important; /* Hover durumunda koyu mavi */
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(197, 165, 114, 0.2);
+} 
